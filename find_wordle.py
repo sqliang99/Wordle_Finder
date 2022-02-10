@@ -1,13 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
+#word finding function
 
 import word_list
-
-
-# In[48]:
 
 
 def find_wordle(avoid,*args,**kwargs):
