@@ -19,7 +19,7 @@ def find_wordle(avoid,*args,**kwargs):
             new_kwargs[2] = kwargs[key]
         if key == 'fourth':
             new_kwargs[3] = kwargs[key]
-        if key == 'five':
+        if key == 'fifth':
             new_kwargs[4] = kwargs[key]
     
     
