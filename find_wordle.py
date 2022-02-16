@@ -35,6 +35,7 @@ def find_wordle(avoid,*args,**kwargs):
 def max_info(args2,*args,**kwargs):
     words = find_wordle(args2,*args,**kwargs)
     cnt = collections.Counter()
+    scores = collections.Counter()
     for word in list(words):
         for letter in set(word):
             cnt[letter]+=1
@@ -42,7 +43,14 @@ def max_info(args2,*args,**kwargs):
     ignore = list(args)+list(kwargs.values())
     ignore = set(ignore)
     for i in ignore:
-        del cnt[i]  
-    lucky = [w for w in words if cnt.most_common()[0][0] in w]
+        del cnt[i]
+    print(cnt)
+    
+    for w in words:
+        for l in cnt.keys():
+            if l in w:
+                scores[w]+=cnt[l]
+    
+    lucky = [k for k, v in scores.items() if v == max(scores.values())]
     
     return random.choice(lucky)
