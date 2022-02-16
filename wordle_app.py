@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-
-
 
 import streamlit as st
 import find_wordle as fw
@@ -46,5 +41,13 @@ try:
         avoidlist = l.split(' ')
     out = fw.find_wordle(avoidlist,*letters,**dic)
     st.write(out)
+    
+    luck = st.checkbox('i would like a lucky word')
+    if luck:
+        try:
+            lucky = fw.max_info(avoidlist,*letters,**dic)
+            st.write(lucky)
+        except:
+            pass
 except:
     pass
