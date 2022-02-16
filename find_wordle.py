@@ -1,7 +1,8 @@
 #word finding function
 
 import word_list
-
+import collections
+import random
 
 def find_wordle(avoid,*args,**kwargs):
     '''
@@ -31,3 +32,17 @@ def find_wordle(avoid,*args,**kwargs):
     else:
         print("Seems like there's no word for this")
 
+def max_info(args2,*args,**kwargs):
+    words = find_wordle(args2,*args,**kwargs)
+    cnt = collections.Counter()
+    for word in list(words):
+        for letter in set(word):
+            cnt[letter]+=1
+    
+    ignore = list(args)+list(kwargs.values())
+    ignore = set(ignore)
+    for i in ignore:
+        del cnt[i]  
+    lucky = [w for w in words if cnt.most_common()[0][0] in w]
+    
+    return random.choice(lucky)
