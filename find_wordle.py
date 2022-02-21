@@ -4,7 +4,7 @@ import word_list
 import collections
 import random
 
-def find_wordle(args,kwargs,nopos,args2 = []):
+def find_wordle(args,kwargs,nopos,args2):
     '''
     a function to find words from the wordle list 
     can pass down letters that are present in the word
@@ -39,7 +39,7 @@ def find_wordle(args,kwargs,nopos,args2 = []):
     output = [word for word in word_list.word_list if all(letter in word for letter in args) 
               and all(letter not in word for letter in args2)
               and all(value == word[int(key)] for key,value in new_kwargs.items())
-             and all(value != word[int(key)] for key,value in new_nopos.items())]
+             and all(word[int(key)] not in value for key,value in new_nopos.items())]
     if len(output) > 0:
          return output
     else:
