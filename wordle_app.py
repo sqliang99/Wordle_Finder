@@ -68,13 +68,13 @@ try:
         avoidlist = l.split(' ')
         
     
-    out = fw.find_wordle(avoidlist,*letters,**dic)
+    out = fw.find_wordle(others,dic,dic2,avoid)
     st.write(out)
     
     luck = st.checkbox('i would like a lucky word')
     if luck:
         try:
-            lucky = fw.max_info(avoidlist,*letters,**dic)
+            lucky = fw.max_info(others,dic,dic2,avoid)
             st.write(lucky)
         except:
             pass
