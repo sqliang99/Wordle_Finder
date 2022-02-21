@@ -71,5 +71,5 @@ st.write(out)
 
 luck = st.checkbox('i would like a lucky word')
 if luck:
-    lucky = fw.max_info(others,dic,dic2,avoid)
+    lucky = fw.max_info(letters,dic,dic2,avoidlist)
     st.write(lucky)
