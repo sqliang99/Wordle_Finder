@@ -45,7 +45,7 @@ def find_wordle(args,kwargs,nopos,args2):
     else:
         print("Seems like there's no word for this")
 
-def max_info(args2,*args,**kwargs):
+def max_info(args,kwargs,nopos,args2):
     words = find_wordle(args2,*args,**kwargs)
     cnt = collections.Counter()
     scores = collections.Counter()
