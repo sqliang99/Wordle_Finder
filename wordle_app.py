@@ -66,7 +66,7 @@ if avoid:
     avoidlist = l.split(' ')
 
 
-out = fw.find_wordle(others,dic,dic2,avoid)
+out = fw.find_wordle(letters,dic,dic2,avoidlist)
 st.write(out)
 
 luck = st.checkbox('i would like a lucky word')
