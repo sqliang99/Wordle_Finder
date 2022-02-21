@@ -4,7 +4,7 @@ import word_list
 import collections
 import random
 
-def find_wordle(avoid,*args,**kwargs):
+def find_wordle(args,kwargs,nopos,args2 = []):
     '''
     a function to find words from the wordle list 
     can pass down letters that are present in the word
@@ -23,10 +23,23 @@ def find_wordle(avoid,*args,**kwargs):
         if key == 'fifth':
             new_kwargs[4] = kwargs[key]
     
+    new_nopos = {}
+    for key in nopos.keys():
+        if key == 'first':
+            new_nopos[0] = nopos[key]
+        if key == 'second':
+            new_nopos[1] = nopos[key]
+        if key == 'third':
+            new_nopos[2] = nopos[key]
+        if key == 'fourth':
+            new_nopos[3] = nopos[key]
+        if key == 'fifth':
+            new_nopos[4] = nopos[key]
     
-    
-    o = [word for word in word_list.word_list if all(letter in word for letter in args) and all(value == word[key] for key,value in new_kwargs.items())]
-    output = [word for word in o if all(letter not in word for letter in avoid)]
+    output = [word for word in word_list.word_list if all(letter in word for letter in args) 
+              and all(letter not in word for letter in args2)
+              and all(value == word[int(key)] for key,value in new_kwargs.items())
+             and all(value != word[int(key)] for key,value in new_nopos.items())]
     if len(output) > 0:
          return output
     else:
