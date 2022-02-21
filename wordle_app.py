@@ -16,7 +16,7 @@ if first:
 
 afirst = st.checkbox('i know letters that are not the first letter')
 if afirst:
-    l1 = st.text_input('enter with space between', 'a b c').lower()
+    l1 = st.text_input('letters that are not the first letter', 'a b c').lower()
     dic2['first'] = l1.split(' ')
 
 second = st.checkbox('i know the second letter')
@@ -25,7 +25,7 @@ if second:
 
 asecond = st.checkbox('i know letters that are not the second letter')
 if asecond:
-    l2 = st.text_input('enter these letter with space between', 'a b c').lower()
+    l2 = st.text_input('letters that are not the second letter', 'a b c').lower()
     dic2['second'] = l2.split(' ')
 
 third = st.checkbox('i know the third letter')
@@ -34,7 +34,7 @@ if third:
 
 athird = st.checkbox('i know letters that are not the third letter')
 if athird:
-    l3 = st.text_input('enter these letter with space between', 'a b c').lower()
+    l3 = st.text_input('letters that are not the third letter', 'a b c').lower()
     dic2['third'] = l3.split(' ')
 
 fourth = st.checkbox('i know the fourth letter')
@@ -43,7 +43,7 @@ if fourth:
 
 afourth = st.checkbox('i know letters that are not the fourth letter')
 if afourth:
-    l4 = st.text_input('enter these letter with space between', 'a b c').lower()
+    l4 = st.text_input('letters that are not the fourth letter', 'a b c').lower()
     dic2['fourth'] = l4.split(' ')
 
 fifth = st.checkbox('i know the fifth letter')
@@ -52,7 +52,7 @@ if fifth:
 
 afifth = st.checkbox('i know letters that are not the fifth letter')
 if afifth:
-    l5 = st.text_input('enter these letter with space between', 'a b c').lower()
+    l5 = st.text_input('letters that are not the fifth letter', 'a b c').lower()
     dic2['fifth'] = l5.split(' ')
 
 others = st.checkbox('i know letters that are in the word, but im not sure about the position')
